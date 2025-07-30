@@ -18,23 +18,41 @@
       background-size: cover;
       backdrop-filter: brightness(0.8);
     }
-
     header {
       color: white;
       text-align: center;
       padding-top: 2cm;
       padding-bottom: 1.5rem;
     }
-
     header h1 {
       margin: 0;
       font-size: 2.2rem;
     }
-
     header p {
       margin-top: 0.5rem;
       font-style: italic;
       font-size: 1.2rem;
+    }
+
+    /* Updated About Us section with background image */
+    .about-us-section {
+      background-image: url('images/g2.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      max-width: 900px;
+      margin: 2rem auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    .about-us-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+    }
+    .about-us-content {
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     }
 
     section {
@@ -45,47 +63,11 @@
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
-
     h2 {
       color: #a8324a;
       border-bottom: 2px solid #ddd;
       padding-bottom: 0.3rem;
     }
-
-    .about-us-section {
-      margin: 2rem auto;
-      max-width: 900px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-
-    .about-us-bg {
-      position: relative;
-      background-image: url('images/b2.jpeg');
-      background-size: cover;
-      background-position: center;
-      height: auto;
-      padding: 2rem;
-    }
-
-    .about-us-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-
-    .about-us-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-    }
-
     .committee {
       display: flex;
       flex-wrap: wrap;
@@ -93,13 +75,11 @@
       margin-top: 1rem;
       justify-content: center;
     }
-
     .member {
       flex: 1 1 200px;
       max-width: 220px;
       text-align: center;
     }
-
     .member img {
       width: 150px;
       height: 150px;
@@ -109,28 +89,24 @@
       box-shadow: 0 0 10px rgba(168,50,74,0.7);
       margin-bottom: 0.5rem;
     }
-
     .member strong {
       display: block;
       font-size: 1.1rem;
       margin-bottom: 0.3rem;
       color: #a8324a;
     }
-
     .team {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
       margin-top: 1rem;
     }
-
     .gallery img {
       width: 100%;
       height: 150px;
@@ -138,17 +114,14 @@
       border-radius: 6px;
       box-shadow: 0 0 8px rgba(168,50,74,0.5);
     }
-
     ul {
       list-style: none;
       padding-left: 0;
     }
-
     ul li {
       margin-bottom: 1rem;
       line-height: 1.4;
     }
-
     footer {
       background: rgba(238, 238, 238, 0.95);
       text-align: center;
@@ -157,31 +130,12 @@
       font-size: 0.9rem;
       color: #555;
     }
-
     a {
       color: #a8324a;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
-    }
-
-    .main-image-container {
-      max-width: 900px;
-      margin: 1rem auto 3rem auto;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-
-    .main-image-container img {
-      width: 100%;
-      height: auto;
-      display: inline-block;
-      object-fit: cover;
-      max-height: 400px;
     }
 
     @media (max-width: 600px) {
@@ -205,21 +159,17 @@
       background: white;
       font-size: 1rem;
     }
-
     th, td {
       padding: 12px 15px;
       text-align: left;
       border-bottom: 1px solid #ddd;
-      transition: background-color 0.3s ease;
     }
-
     th {
       background-color: #a8324a;
       color: white;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-
     tr:hover {
       background-color: #fce4ec;
     }
@@ -271,14 +221,12 @@
   <p>Bringing the Indian Bengali community together in Spain since 2021</p>
 </header>
 
-<!-- ✅ Updated About Us section with background image -->
 <section class="about-us-section">
-  <div class="about-us-bg">
-    <div class="about-us-overlay"></div>
+  <div class="about-us-overlay">
     <div class="about-us-content">
       <h2>About Us</h2>
       <p>
-        The Bengali Cultural Association of India in Spain, a non-profit organisation founded in 2021, is passionately committed to enriching the lives of our vibrant subcontinent community. 
+        The Bengali Cultural Association of India in Spain, a non-profit organisation founded in 2021, is passionately committed to enriching the lives of our vibrant subcontinent community.
         Our mission is to foster unity and celebrate all the Bengali cultural events together.
       </p>
     </div>
@@ -303,10 +251,6 @@
     <strong>Where there is devotion, everything is possible. Maa will guide the way.</strong>
   </p>
 </section>
-
-<div class="main-image-container">
-  <img src="images/g2.jpeg" alt="Main Image" />
-</div>
 
 <section>
   <h2>Founding members:</h2>
@@ -358,9 +302,9 @@
   <h2>Gallery</h2>
   <div class="gallery">
     <img src="images/g1.jpeg" alt="Durga Puja Celebration 1" />
-    <img src="images/g2.jpeg"  alt="Durga Puja Celebration 2" />
-    <img src="images/g1.jpeg"  alt="Durga Puja Celebration 3" />
-    <img src="images/g2.jpeg"  alt="Durga Puja Celebration 4" />
+    <img src="images/g2.jpeg" alt="Durga Puja Celebration 2" />
+    <img src="images/g1.jpeg" alt="Durga Puja Celebration 3" />
+    <img src="images/g2.jpeg" alt="Durga Puja Celebration 4" />
   </div>
 </section>
 
