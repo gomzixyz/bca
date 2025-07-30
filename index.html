@@ -3,477 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bengali Cultural Association (BCA) - Barcelona</title>
+  <title>Federació d'Entitats Calàbria 66</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      background: #f4f4f4;
       color: #333;
-      background-image: url('images/bg1.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: cover;
-      backdrop-filter: brightness(0.8);
-    }
-    header {
-      color: white;
-      text-align: center;
-      padding-top: 2cm;
-      padding-bottom: 1.5rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3.2rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-style: italic;
-      font-size: 2.2rem;
     }
 
-    /* Updated About Us section with background image */
-    .about-us-section {
-      background-image: url('images/g2.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      max-width: 900px;
-      margin: 2rem auto;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
     }
-    .about-us-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0 0 0.3rem 0;
     }
-    .about-us-content {
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+
+    header p {
+      font-size: 1.5rem;
+      margin: 0;
     }
 
     section {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 2rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 0 10px #ccc;
+      border-radius: 5px;
+    }
+
+    .about-us-overlay {
+      padding: 2rem;
+      background-color: #eee;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 2rem;
     }
-    h2 {
-      color: #a8324a;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .committee {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 1rem;
-      justify-content: center;
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      height: auto;
+      object-fit: cover;
     }
-    .member {
-      flex: 1 1 200px;
-      max-width: 220px;
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       text-align: center;
     }
+
     .member img {
       width: 150px;
       height: 150px;
-      object-fit: cover;
       border-radius: 50%;
-      border: 3px solid #a8324a;
-      box-shadow: 0 0 10px rgba(168,50,74,0.7);
-      margin-bottom: 0.5rem;
+      object-fit: cover;
+      margin-bottom: 0.7rem;
     }
+
     .member strong {
       display: block;
       font-size: 1.1rem;
       margin-bottom: 0.3rem;
-      color: #a8324a;
-    }
-    .team {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
- .gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
-  gap: 10px;
-  margin-top: 1rem;
-}
-    
-  .gallery img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(168,50,74,0.5);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(168,50,74,0.9);
-  z-index: 2;
-  position: relative;
-}
-    /* Lightbox overlay */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox.active {
-      display: flex;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.7);
-    }
-    .lightbox .close-btn {
-      position: absolute;
-      top: 20px; right: 30px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-      font-weight: bold;
     }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li {
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-    footer {
-      background: rgba(238, 238, 238, 0.95);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    a {
-      color: #a8324a;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    /* Responsive adjustments */
 
-    @media (max-width: 600px) {
-      .committee {
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 900px) {
+      header h1 {
+        font-size: 2.5rem;
       }
+
+      header p {
+        font-size: 1.3rem;
+      }
+
+      .about-us-overlay {
+        padding: 1.5rem;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .member img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .member strong {
+        font-size: 1rem;
+      }
+
       section {
         margin: 1rem;
         padding: 1rem;
       }
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-      box-shadow: 0 4px 10px rgba(168,50,74,0.15);
-      border-radius: 10px;
-      overflow: hidden;
-      background: white;
-      font-size: 1rem;
-    }
-    th, td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      background-color: #a8324a;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    tr:hover {
-      background-color: #fce4ec;
-    }
-
-    .venue-table th {
-      background-color: #c94a68;
-    }
-
     @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
+      header h1 {
+        font-size: 2rem;
       }
-      thead tr {
-        display: none;
+
+      header p {
+        font-size: 1.1rem;
       }
-      tr {
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #ddd;
-        border-radius: 8px;
-        padding: 10px;
-        box-shadow: 0 2px 6px rgba(168,50,74,0.1);
+
+      .gallery {
+        grid-template-columns: 1fr;
       }
-      td {
-        padding-left: 50%;
-        position: relative;
-        border: none;
-        border-bottom: 1px solid #eee;
-        text-align: right;
+
+      .team {
+        grid-template-columns: 1fr;
       }
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        top: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #a8324a;
-        width: 45%;
-        white-space: nowrap;
-        text-align: left;
+
+      .member img {
+        width: 100px;
+        height: 100px;
+      }
+
+      section {
+        margin: 0.5rem;
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      header p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Federació d'Entitats Calàbria 66</h1>
+    <p>Una xarxa d’entitats i col·lectius veïnals</p>
+  </header>
 
-<header>
-  <h1>Bengali Cultural Association - Barcelona</h1>
-  <p>Bringing the Indian Bengali community together in Spain since 2021</p>
-</header>
+  <section class="about-us-overlay">
+    <h2>Qui Som</h2>
+    <p>
+      Som una federació creada el 2016 per sumar esforços entre les
+      entitats, col·lectius i veïns del barri Sant Antoni per crear projectes
+      socials, culturals i educatius.
+    </p>
+  </section>
 
-<section>
-  <h2>About Us</h2>
-  <p>
-    The Bengali Cultural Association of India in Spain, a non-profit organisation founded in 2021, is passionately committed to enriching the lives of our vibrant subcontinent community.
-    Our mission is to foster unity and celebrate all the Bengali cultural events together.
-  </p>
-</section>
+  <section class="gallery">
+    <img src="https://picsum.photos/id/1018/400/300" alt="Project 1" />
+    <img src="https://picsum.photos/id/1025/400/300" alt="Project 2" />
+    <img src="https://picsum.photos/id/1035/400/300" alt="Project 3" />
+  </section>
 
-<section>
-  <h2>Our History</h2>
-  <p><strong>Maa Durga aschhen, Kumartuli theke</strong></p>
-  <p>
-    It all began with a spark — a few friends (Sanjay, Anindya, Siddharth and Shreyashree), a bold idea, and just 11 days to bring Maa Durga to Barcelona. In 2021, the Bengali Cultural Association (BCA) was born, driven by the belief:<br>
-    <em>"Maa Durga nijei nijer pujo koraben. Shob hoye jaabe."</em>
-  </p>
-  <p>
-    By 2024, that dream came alive. With unity, love, and unwavering dedication, we brought an Ek-Chala fibreglass idol from Kumartuli — Kolkata’s sacred hub of Durga artisans — to Spain.
-  </p>
-  <p>
-    That year also marked BCA’s official recognition as a non-profit organisation in Spain, becoming a cultural beacon for the Bengali diaspora.
-  </p>
-  <p>
-    Now, as we pass the torch to a new generation of leaders, we continue with the same faith: <br>
-    <strong>Where there is devotion, everything is possible. Maa will guide the way.</strong>
-  </p>
-</section>
-
-<section>
-  <h2>Founding members:</h2>
-  <div class="committee">
+  <section class="team">
     <div class="member">
-      <img src="images/p.jpeg" alt="Sanjay Das Gupta - President" />
-      <strong>President</strong>
-      <p>Sanjay Das Gupta</p>
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Maria" />
+      <strong>Maria Puig</strong>
+      <p>Coordinadora de projectes</p>
     </div>
     <div class="member">
-      <img src="images/vp.jpeg" alt="Shreyashree Nag - Vice President" />
-      <strong>Vice President</strong>
-      <p>Shreyashree Nag</p>
+      <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Joan" />
+      <strong>Joan Serra</strong>
+      <p>Responsable de comunicació</p>
     </div>
     <div class="member">
-      <img src="images/s1.jpeg" alt="Siddharth Ghosh - General Secretary" />
-      <strong>General Secretary</strong>
-      <p>Siddharth Ghosh</p>
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Anna" />
+      <strong>Anna López</strong>
+      <p>Gestora cultural</p>
     </div>
     <div class="member">
-      <img src="images/t.jpeg" alt="Anindya Saha - Treasurer" />
-      <strong>Treasurer</strong>
-      <p>Anindya Saha</p>
+      <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Marc" />
+      <strong>Marc Soler</strong>
+      <p>Coordinador tècnic</p>
     </div>
-  </div>
-
-  <h3>Working Committee:</h3>
-  <div class="team">
-    <div>Ritwik Chakraborty</div>
-    <div>Nibir Das</div>
-    <div>Vaishali Das Gupta</div>
-    <div>Arik Dutta</div>
-    <div>Arnab Sarkar</div>
-    <div>Abeera Chatterjee</div>
-    <div>Surya Banerjee</div>
-    <div>Sabyasachi Bose</div>
-    <div>Bhagyashree Das</div>
-    <div>Rupam Saha</div>
-    <div>Minakshi Gupta</div>
-    <div>Debmalya Roy</div>
-    <div>Arijit Manna</div>
-    <div>Lipsa Parida</div>
-    <div>Suprio Ghosh</div>
-    <div>Gautam Roy</div>
-  </div>
-</section>
-
-<section>
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="images/g5.jpeg" alt="Durga Puja Celebration 1" />
-    <img src="images/g4.jpeg" alt="Durga Puja Celebration 2" />
-    <img src="images/g3.jpeg" alt="Durga Puja Celebration 3" />
-    <img src="images/g4.jpeg" alt="Durga Puja Celebration 4" />
-    <img src="images/g15.jpeg" alt="Durga Puja Celebration 5" />
-    
-    <img src="images/g6.jpeg" alt="Durga Puja Celebration 6" />
-    <img src="images/g7.jpeg" alt="Durga Puja Celebration 7" />
-    <img src="images/g8.jpeg" alt="Durga Puja Celebration 8" />
-    <img src="images/g9.jpeg" alt="Durga Puja Celebration 9" />
-    <img src="images/g10.jpeg" alt="Durga Puja Celebration 10" />
-    
-    <img src="images/g11.jpeg" alt="Durga Puja Celebration 11" />
-    <img src="images/g12.jpeg" alt="Durga Puja Celebration 12" />
-    <img src="images/g13.jpeg" alt="Durga Puja Celebration 13" />
-    <img src="images/g14.jpeg" alt="Durga Puja Celebration 14" />
-    <img src="images/g1.jpeg" alt="Durga Puja Celebration 15" />
-  </div>
-</section>
-
-  <!-- Lightbox container -->
-  <div class="lightbox" id="lightbox">
-    <span class="close-btn" id="closeBtn">&times;</span>
-    <img src="" alt="Expanded Image" id="lightboxImg" />
-  </div>
-</section>
-
-<section>
-  <h2>Pujo 2025 Schedule</h2>
-  <p>Join us for five days of festivities from <strong>Sunday 28th September to Thursday 2nd October</strong> at <strong>Carrer de Buenaventura Munoz 6, Barcelona</strong>.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Day</th>
-        <th>Event</th>
-        <th>Date &amp; Time</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="Day">Maha Shashthi</td>
-        <td data-label="Event">The welcoming of Goddess Durga</td>
-        <td data-label="Date & Time">Sunday 28th September<br>6pm to 9pm</td>
-        <td data-label="Details">Arati: 7:30pm<br>Sandhi Puja: 8pm</td>
-      </tr>
-      <tr>
-        <td data-label="Day">Maha Saptami</td>
-        <td data-label="Event">Celebrate the seventh day</td>
-        <td data-label="Date & Time">Monday 29th September<br>6pm to 9pm</td>
-        <td data-label="Details">Aarti at 7pm</td>
-      </tr>
-      <tr>
-        <td data-label="Day">Maha Ashtami</td>
-        <td data-label="Event">The most sacred day</td>
-        <td data-label="Date & Time">Tuesday 30th September<br>6pm to 9pm</td>
-        <td data-label="Details">Bhog Prasad at 5:45pm<br>Aarti at 7pm<br>Bodhon and Sandhi Puja at 8pm</td>
-      </tr>
-      <tr>
-        <td data-label="Day">Maha Navami</td>
-        <td data-label="Event">Ninth day celebrations</td>
-        <td data-label="Date & Time">Wednesday 1st October<br>6pm to 9pm</td>
-        <td data-label="Details">Aarti at 7pm</td>
-      </tr>
-      <tr>
-        <td data-label="Day">Maha Dashami</td>
-        <td data-label="Event">Farewell and immersion</td>
-        <td data-label="Date & Time">Thursday 2nd October<br>6pm to 9pm</td>
-        <td data-label="Details">Visarjan (immersion)ceremony</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section>
-  <h2>Venue</h2>
-  <table class="venue-table">
-    <thead>
-      <tr>
-        <th>Place</th>
-        <th>Address</th>
-        <th>Nearby Metro</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Valid World Hall, Barcelona</td>
-        <td>Carrer de Buenaventura Muñoz 6, Barcelona</td>
-        <td>Arc de Triomf(L1) ~ 1 min walk </td>
-      </tr>
-       <tr>
-        <td>Federación de Entidades Calàbria</td>
-        <td>Carrer Calàbria 66, Barcelona</td>
-        <td>Rocafort (L1) ~ 4 min walk </td>
-      </tr>
-    </tbody>
-  </table>
-  <p><a href="https://goo.gl/maps/sX1QhFbkLMAp2Uag6" target="_blank" rel="noopener noreferrer">Google Maps Link</a></p>
-</section>
-
-<footer>
-  <p>© 2025 Bengali Cultural Association - Barcelona | Contact: <a href="mailto:info@bca-barcelona.org">info@bca-barcelona.org</a></p>
-</footer>
-
-<script>
-  // Lightbox functionality
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const closeBtn = document.getElementById('closeBtn');
-  const galleryImages = document.querySelectorAll('.gallery img');
-
-  galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('active');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-  });
-
-  // Close lightbox when clicking outside the image
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('active');
-    }
-  });
-
-  // Close with Esc key
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      lightbox.classList.remove('active');
-    }
-  });
-</script>
-
+  </section>
 </body>
 </html>
