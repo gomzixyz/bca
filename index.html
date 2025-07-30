@@ -7,20 +7,24 @@
   <style>
     /* Background with Durga Maa image */
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
-
-  background-image: url('images/bg1.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-
-  backdrop-filter: brightness(0.8);
-}
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-image: url('images/bg1.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.8);
+    }
+    header {
+      color: white;
+      text-align: center;
+      padding-top: 5cm; /* Push header down */
+      padding-bottom: 1.5rem;
+    }
     header h1 {
       margin: 0;
       font-size: 2.2rem;
@@ -112,24 +116,25 @@
     a:hover {
       text-decoration: underline;
     }
-    /* Kolkata image container */
 
-    <div class="kolkata-image">
-  <img src="images/g2.jpeg" alt="Kolkata Image">
-</div>
-    .kolkata-image {
+    /* Main image container */
+    .main-image-container {
       max-width: 900px;
       margin: 1rem auto 3rem auto;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
     }
-    .kolkata-image img {
+    .main-image-container img {
       width: 100%;
-      display: block;
+      height: auto;
+      display: inline-block;
       object-fit: cover;
-      height: 300px;
+      max-height: 400px;
     }
+
+    /* Committee responsive */
     @media (max-width: 600px) {
       .committee {
         flex-direction: column;
@@ -140,11 +145,79 @@
         padding: 1rem;
       }
     }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      box-shadow: 0 4px 10px rgba(168,50,74,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      font-size: 1rem;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+    }
+    th {
+      background-color: #a8324a;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    tr:hover {
+      background-color: #fce4ec;
+    }
+
+    /* Venue table special styling */
+    .venue-table th {
+      background-color: #c94a68;
+    }
+
+    /* Responsive tables for mobile */
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        display: none;
+      }
+      tr {
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(168,50,74,0.1);
+      }
+      td {
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+        text-align: right;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #a8324a;
+        width: 45%;
+        white-space: nowrap;
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
 
-<header style="color: white; text-align: center;">
+<header>
   <h1>Bengali Cultural Association - Barcelona</h1>
   <p>Bringing the Indian Bengali community together in Spain since 2021</p>
 </header>
@@ -176,31 +249,31 @@
   </p>
 </section>
 
-<!-- Kolkata Durga Puja image -->
-<div class="kolkata-image">
-  <img src="https://images.unsplash.com/photo-1601071460441-cd145c25741a?auto=format&fit=crop&w=1350&q=80" alt="Durga Puja Celebration in Kolkata" />
+<!-- Replaced Kolkata image with main.jpg centered as requested -->
+<div class="main-image-container">
+  <img src="images/main.jpg" alt="Main Image" />
 </div>
 
 <section>
-  <h2>Our Committee</h2>
+  <h2>Our Committee and the Founding members:</h2>
   <div class="committee">
     <div class="member">
-      <img src="images\p.jpeg" alt="Sanjay Das Gupta - President" />
+      <img src="images/p.jpeg" alt="Sanjay Das Gupta - President" />
       <strong>President</strong>
       <p>Sanjay Das Gupta</p>
     </div>
     <div class="member">
-      <img src="images\vp.jpeg" alt="Shreyashree Nag - Vice President" />
+      <img src="images/vp.jpeg" alt="Shreyashree Nag - Vice President" />
       <strong>Vice President</strong>
       <p>Shreyashree Nag</p>
     </div>
     <div class="member">
-      <img src="images\s.jpeg" alt="Siddharth Ghosh - General Secretary" />
+      <img src="images/s.jpeg" alt="Siddharth Ghosh - General Secretary" />
       <strong>General Secretary</strong>
       <p>Siddharth Ghosh</p>
     </div>
     <div class="member">
-      <img src="images\t.jpeg" alt="Anindya Saha - Treasurer" />
+      <img src="images/t.jpeg" alt="Anindya Saha - Treasurer" />
       <strong>Treasurer</strong>
       <p>Anindya Saha</p>
     </div>
@@ -211,17 +284,17 @@
     <div>Ritwik Chakraborty</div>
     <div>Nibir Das</div>
     <div>Gautam Roy</div>
-    <div>Vaishali DasGupta</div>
+    <div>Vaishali Das Gupta</div>
     <div>Arik Dutta</div>
     <div>Arnab Sarkar</div>
-    <div>Abeera Ghosh</div>
+    <div>Abeera Chatterjee</div>
     <div>Surya Banerjee</div>
     <div>Sabyasachi Bose</div>
     <div>Bhagyashree Das</div>
     <div>Rupam Saha</div>
     <div>Minakshi Gupta</div>
     <div>Debmalya Roy</div>
-    <div>Arijit Das</div>
+    <div>Arijit Manna</div>
     <div>Lipsa Parida</div>
     <div>Suprio Ghosh</div>
   </div>
@@ -230,68 +303,89 @@
 <section>
   <h2>Gallery</h2>
   <div class="gallery">
-src="images\s.jpeg"
-    <img src="images\g1.jpeg" alt="Durga Puja Celebration 1" />
-    <img src="images\g2.jpeg"  alt="Durga Puja Celebration 2" />
-    <img src="images\g1.jpeg"  alt="Durga Puja Celebration 3" />
-    <img src="images\g2.jpeg"  alt="Durga Puja Celebration 4" />
-    <img src="images\g1.jpeg"  alt="Durga Puja Celebration 5" />
-    <img src="images\g2.jpeg"  alt="Durga Puja Celebration 6" />
+    <img src="images/g1.jpeg" alt="Durga Puja Celebration 1" />
+    <img src="images/g2.jpeg"  alt="Durga Puja Celebration 2" />
+    <img src="images/g1.jpeg"  alt="Durga Puja Celebration 3" />
+    <img src="images/g2.jpeg"  alt="Durga Puja Celebration 4" />
   </div>
 </section>
 
 <section>
   <h2>Pujo 2025 Schedule</h2>
-  <p>
-    Join us for five days of festivities from <strong>Sunday 28th September to Thursday 2nd October</strong> at <strong>Carrer de Buenaventura Munoz 6, Barcelona</strong>.
-  </p>
+  <p>Join us for five days of festivities from <strong>Sunday 28th September to Thursday 2nd October</strong> at <strong>Carrer de Buenaventura Munoz 6, Barcelona</strong>.</p>
   <p>We can’t wait to celebrate this special occasion with you and continue the tradition that has brought our community together for generations.</p>
 
-  <ul>
-    <li><strong>Maha Shashthi - The welcoming of Goddess Durga</strong><br />
-      Sunday 28th September - 6pm to 9pm<br />
-      Arati: 7:30pm
-    </li>
-    <li><strong>Maha Saptami - The idol is consecrated; the main puja begins</strong><br />
-      Monday 29th September - 11am to 10pm<br />
-      Anjali & Prasad: 12pm<br />
-      Arati: 7:30pm
-    </li>
-    <li><strong>Maha Ashtami - The most sacred day, highlighted by Sandhi Puja</strong><br />
-      Tuesday 30th September - 11am to 10pm<br />
-      Anjali & Prasad: 8pm<br />
-      Arati: 7:30pm
-    </li>
-    <li><strong>Maha Nabami - Prayers and bhog mark the Goddess’s triumph</strong><br />
-      Wednesday 1st October - 11am to 10pm<br />
-      Anjali & Prasad: 8pm<br />
-      Arati: 7:30pm
-    </li>
-    <li><strong>Bijoya Dashami - A heartfelt farewell during the Bisarjan</strong><br />
-      Thursday 2nd October - 6pm to 8pm
-    </li>
-  </ul>
-
-  <p>
-    <strong>Pujo Venue (2025):</strong><br />
-    Carrer de Buenaventura Munoz 6, Ciutat Vella, Barcelona<br />
-    Nearest Metro - Arc de Triomf
-  </p>
-
-  <p>
-    <strong>Cultural Program Venue (2025):</strong><br />
-    Federació d'Entitats Calàbria - Carrer Calàbria 66, Eixample, Barcelona<br />
-    Nearest Metro - Rocafort (L1 Line) 
-  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Event</th>
+        <th>Date &amp; Time</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Day">Maha Shashthi</td>
+        <td data-label="Event">The welcoming of Goddess Durga</td>
+        <td data-label="Date & Time">Sunday 28th September<br>6pm to 9pm</td>
+        <td data-label="Details">Arati: 7:30pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Saptami</td>
+        <td data-label="Event">The idol is consecrated; the main puja begins</td>
+        <td data-label="Date & Time">Monday 29th September<br>11am to 10pm</td>
+        <td data-label="Details">Anjali &amp; Prasad: 12pm<br>Arati: 7:30pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Ashtami</td>
+        <td data-label="Event">The most sacred day, highlighted by Sandhi Puja</td>
+        <td data-label="Date & Time">Tuesday 30th September<br>11am to 10pm</td>
+        <td data-label="Details">Anjali &amp; Prasad: 8pm<br>Arati: 7:30pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Nabami</td>
+        <td data-label="Event">Prayers and bhog mark the Goddess’s triumph</td>
+        <td data-label="Date & Time">Wednesday 1st October<br>11am to 10pm</td>
+        <td data-label="Details">Anjali &amp; Prasad: 8pm<br>Arati: 7:30pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Bijoya Dashami</td>
+        <td data-label="Event">A heartfelt farewell during the Bisarjan</td>
+        <td data-label="Date & Time">Thursday 2nd October<br>6pm to 8pm</td>
+        <td data-label="Details">—</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <section>
-  <h2>Contact Details</h2>
-  <p>Email: <a href="mailto:bengalicultural.a@gmail.com">bengalicultural.a@gmail.com</a></p>
+  <h2>Venue Details (2025)</h2>
+
+  <table class="venue-table">
+    <thead>
+      <tr>
+        <th>Pujo Venue</th>
+        <th>Cultural Program Venue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Pujo Venue">
+          Carrer de Buenaventura Munoz 6,<br>Ciutat Vella, Barcelona<br>
+          Nearest Metro - Arc de Triomf
+        </td>
+        <td data-label="Cultural Program Venue">
+          Federació d'Entitats Calàbria,<br>Carrer Calàbria 66, Eixample, Barcelona<br>
+          Nearest Metro - Rocafort (L1 Line)
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <footer>
-  &copy; 2025 Bengali Cultural Association - Barcelona. All rights reserved.
+  &copy; 2025 Bengali Cultural Association of India in Spain
 </footer>
 
 </body>
