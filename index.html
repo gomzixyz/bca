@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Essential for mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bengali Cultural Association (BCA) - Barcelona</title>
+  <title>Bengali Cultural Association - Barcelona</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -27,12 +26,12 @@
     }
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
+      font-size: 2.2rem;
     }
     header p {
       margin-top: 0.5rem;
       font-style: italic;
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
 
     /* Updated About Us section with background image */
@@ -102,27 +101,29 @@
       gap: 1rem;
       margin-top: 1rem;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      margin-top: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 6px;
-      box-shadow: 0 0 8px rgba(168,50,74,0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(168,50,74,0.9);
-      z-index: 2;
-      position: relative;
-    }
+ .gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 10px;
+  margin-top: 1rem;
+}
+    
+  .gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(168,50,74,0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(168,50,74,0.9);
+  z-index: 2;
+  position: relative;
+}
     /* Lightbox overlay */
     .lightbox {
       display: none;
@@ -176,6 +177,17 @@
       text-decoration: underline;
     }
 
+    @media (max-width: 600px) {
+      .committee {
+        flex-direction: column;
+        align-items: center;
+      }
+      section {
+        margin: 1rem;
+        padding: 1rem;
+      }
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -203,54 +215,6 @@
 
     .venue-table th {
       background-color: #c94a68;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 900px) {
-      .gallery {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-        padding-top: 1.5rem;
-      }
-      header p {
-        font-size: 1.2rem;
-      }
-      section {
-        margin: 1rem;
-        padding: 1rem;
-      }
-      .committee {
-        flex-direction: column;
-        align-items: center;
-      }
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .member img {
-        width: 120px;
-        height: 120px;
-      }
-      .member {
-        max-width: none;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-      header h1 {
-        font-size: 1.5rem;
-        padding-top: 1rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
     }
 
     @media (max-width: 600px) {
@@ -292,7 +256,7 @@
 <body>
 
 <header>
-  <h1>Bengali Cultural Association (BCA) - Barcelona</h1>
+  <h1>Bengali Cultural Association - Barcelona</h1>
   <p>Bringing the Indian Bengali community together in Spain since 2021</p>
 </header>
 
@@ -372,78 +336,117 @@
 <section>
   <h2>Gallery</h2>
   <div class="gallery">
-    <img src="images/g5.jpeg" alt="Durga Puja Celebration 1" />
-    <img src="images/g4.jpeg" alt="Durga Puja Celebration 2" />
+    <img src="images/g1.jpeg" alt="Durga Puja Celebration 1" />
+    <img src="images/g2.jpeg" alt="Durga Puja Celebration 2" />
     <img src="images/g3.jpeg" alt="Durga Puja Celebration 3" />
-    <img src="images/g2.jpeg" alt="Durga Puja Celebration 4" />
-    <img src="images/g1.jpeg" alt="Durga Puja Celebration 5" />
+    <img src="images/g4.jpeg" alt="Durga Puja Celebration 4" />
+    <img src="images/g5.jpeg" alt="Durga Puja Celebration 5" />
+    
+    <img src="images/g6.jpeg" alt="Durga Puja Celebration 6" />
+    <img src="images/g7.jpeg" alt="Durga Puja Celebration 7" />
+    <img src="images/g8.jpeg" alt="Durga Puja Celebration 8" />
+    <img src="images/g9.jpeg" alt="Durga Puja Celebration 9" />
+    <img src="images/g10.jpeg" alt="Durga Puja Celebration 10" />
+    
+    <img src="images/g11.jpeg" alt="Durga Puja Celebration 11" />
+    <img src="images/g12.jpeg" alt="Durga Puja Celebration 12" />
+    <img src="images/g13.jpeg" alt="Durga Puja Celebration 13" />
+    <img src="images/g14.jpeg" alt="Durga Puja Celebration 14" />
+    <img src="images/g15.jpeg" alt="Durga Puja Celebration 15" />
+  </div>
+</section>
+
+  <!-- Lightbox container -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <img src="" alt="Expanded Image" id="lightboxImg" />
   </div>
 </section>
 
 <section>
-  <h2>Event Schedule 2024</h2>
+  <h2>Pujo 2025 Schedule</h2>
+  <p>Join us for five days of festivities from <strong>Sunday 28th September to Thursday 2nd October</strong> at <strong>Carrer de Buenaventura Munoz 6, Barcelona</strong>.</p>
+
   <table>
     <thead>
       <tr>
-        <th>Date</th><th>Time</th><th>Event</th>
+        <th>Day</th>
+        <th>Event</th>
+        <th>Date &amp; Time</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td data-label="Date">23 Sept 2024</td><td data-label="Time">7:00 PM</td><td data-label="Event">Mahalaya</td></tr>
-      <tr><td data-label="Date">27 Sept 2024</td><td data-label="Time">10:00 AM</td><td data-label="Event">Bodhon and Bodh Utsav</td></tr>
-      <tr><td data-label="Date">27 Sept 2024</td><td data-label="Time">12:00 PM</td><td data-label="Event">Swarnakshar Kolka - Art Exhibition</td></tr>
-      <tr><td data-label="Date">27 Sept 2024</td><td data-label="Time">8:00 PM</td><td data-label="Event">Hathhe Hath (Cultural evening)</td></tr>
-      <tr><td data-label="Date">1 Oct 2024</td><td data-label="Time">11:00 AM</td><td data-label="Event">Pandal Inauguration</td></tr>
-      <tr><td data-label="Date">4 Oct 2024</td><td data-label="Time">5:00 PM</td><td data-label="Event">Dhunuchi Naach</td></tr>
-      <tr><td data-label="Date">5 Oct 2024</td><td data-label="Time">9:00 AM</td><td data-label="Event">Anjali and Sandhi Puja</td></tr>
-      <tr><td data-label="Date">6 Oct 2024</td><td data-label="Time">10:00 AM</td><td data-label="Event">Visarjan</td></tr>
+      <tr>
+        <td data-label="Day">Maha Shashthi</td>
+        <td data-label="Event">The welcoming of Goddess Durga</td>
+        <td data-label="Date & Time">Sunday 28th September<br>6pm to 9pm</td>
+        <td data-label="Details">Arati: 7:30pm<br>Sandhi Puja: 8pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Saptami</td>
+        <td data-label="Event">Celebrate the seventh day</td>
+        <td data-label="Date & Time">Monday 29th September<br>6pm to 9pm</td>
+        <td data-label="Details">Aarti at 7pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Ashtami</td>
+        <td data-label="Event">The most sacred day</td>
+        <td data-label="Date & Time">Tuesday 30th September<br>6pm to 9pm</td>
+        <td data-label="Details">Bhog Prasad at 5:45pm<br>Aarti at 7pm<br>Bodhon and Sandhi Puja at 8pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Navami</td>
+        <td data-label="Event">Ninth day celebrations</td>
+        <td data-label="Date & Time">Wednesday 1st October<br>6pm to 9pm</td>
+        <td data-label="Details">Aarti at 7pm</td>
+      </tr>
+      <tr>
+        <td data-label="Day">Maha Dashami</td>
+        <td data-label="Event">Farewell and immersion</td>
+        <td data-label="Date & Time">Thursday 2nd October<br>6pm to 9pm</td>
+        <td data-label="Details">Visarjan (immersion) ceremony</td>
+      </tr>
     </tbody>
   </table>
 </section>
 
 <section>
-  <h2>Venue Details</h2>
+  <h2>Venue</h2>
   <table class="venue-table">
     <thead>
-      <tr><th>Location</th><th>Address</th></tr>
+      <tr>
+        <th>Place</th>
+        <th>Address</th>
+        <th>Nearby Metro</th>
+      </tr>
     </thead>
     <tbody>
-     <tr>
-        <td>Valid World Hall (Pujo Venue)</td>
+      <tr>
+        <td>Bengali Cultural Association, Barcelona</td>
         <td>Carrer de Buenaventura Muñoz 6, Barcelona</td>
-        <td>Arc de Triomf(L1) ~ 1 min walk </td>
-      </tr>
-       <tr>
-        <td>Federación de Entidades Calàbria (Community Pogram)</td>
-        <td>Carrer Calàbria 66, Barcelona</td>
-        <td>Rocafort (L1) ~ 4 min walk </td>
+        <td>El Clot or Bac de Roda Metro</td>
       </tr>
     </tbody>
   </table>
+  <p><a href="https://goo.gl/maps/sX1QhFbkLMAp2Uag6" target="_blank" rel="noopener noreferrer">Google Maps Link</a></p>
 </section>
 
 <footer>
-  <p>© 2024 Bengali Cultural Association - Barcelona. All rights reserved.</p>
+  <p>© 2025 Bengali Cultural Association - Barcelona | Contact: <a href="mailto:info@bca-barcelona.org">info@bca-barcelona.org</a></p>
 </footer>
 
-<!-- Lightbox Script -->
 <script>
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('closeBtn');
   const galleryImages = document.querySelectorAll('.gallery img');
-  const lightbox = document.createElement('div');
-  lightbox.classList.add('lightbox');
-  document.body.appendChild(lightbox);
-
-  const lightboxImg = document.createElement('img');
-  lightbox.appendChild(lightboxImg);
-
-  const closeBtn = document.createElement('span');
-  closeBtn.textContent = '×';
-  closeBtn.classList.add('close-btn');
-  lightbox.appendChild(closeBtn);
 
   galleryImages.forEach(img => {
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
       lightbox.classList.add('active');
     });
   });
@@ -452,8 +455,16 @@
     lightbox.classList.remove('active');
   });
 
+  // Close lightbox when clicking outside the image
   lightbox.addEventListener('click', e => {
     if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+
+  // Close with Esc key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
       lightbox.classList.remove('active');
     }
   });
