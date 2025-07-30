@@ -113,7 +113,42 @@
       object-fit: cover;
       border-radius: 6px;
       box-shadow: 0 0 8px rgba(168,50,74,0.5);
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.7);
+    }
+    .lightbox .close-btn {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+    }
+
     ul {
       list-style: none;
       padding-left: 0;
@@ -297,10 +332,21 @@
 <section>
   <h2>Gallery</h2>
   <div class="gallery">
+    <!-- 8 images, repeat as placeholder -->
     <img src="images/g2.jpeg" alt="Durga Puja Celebration 1" />
     <img src="images/g4.jpeg" alt="Durga Puja Celebration 2" />
     <img src="images/g3.jpeg" alt="Durga Puja Celebration 3" />
     <img src="images/g1.jpeg" alt="Durga Puja Celebration 4" />
+    <img src="images/g2.jpeg" alt="Durga Puja Celebration 5" />
+    <img src="images/g4.jpeg" alt="Durga Puja Celebration 6" />
+    <img src="images/g3.jpeg" alt="Durga Puja Celebration 7" />
+    <img src="images/g1.jpeg" alt="Durga Puja Celebration 8" />
+  </div>
+
+  <!-- Lightbox container -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <img src="" alt="Expanded Image" id="lightboxImg" />
   </div>
 </section>
 
@@ -322,63 +368,94 @@
         <td data-label="Day">Maha Shashthi</td>
         <td data-label="Event">The welcoming of Goddess Durga</td>
         <td data-label="Date & Time">Sunday 28th September<br>6pm to 9pm</td>
-        <td data-label="Details">Arati: 7:30pm</td>
+        <td data-label="Details">Arati: 7:30pm<br>Sandhi Puja: 8pm</td>
       </tr>
       <tr>
         <td data-label="Day">Maha Saptami</td>
-        <td data-label="Event">The idol is consecrated; the main puja begins</td>
-        <td data-label="Date & Time">Monday 29th September<br>11am to 10pm</td>
-        <td data-label="Details">Anjali &amp; Prasad: 12pm<br>Arati: 7:30pm</td>
+        <td data-label="Event">Celebrate the seventh day</td>
+        <td data-label="Date & Time">Monday 29th September<br>6pm to 9pm</td>
+        <td data-label="Details">Aarti at 7pm</td>
       </tr>
       <tr>
         <td data-label="Day">Maha Ashtami</td>
-        <td data-label="Event">The most sacred day, highlighted by Sandhi Puja</td>
-        <td data-label="Date & Time">Tuesday 30th September<br>11am to 10pm</td>
-        <td data-label="Details">Anjali &amp; Prasad: 8pm<br>Arati: 7:30pm</td>
+        <td data-label="Event">The most sacred day</td>
+        <td data-label="Date & Time">Tuesday 30th September<br>6pm to 9pm</td>
+        <td data-label="Details">Bhog Prasad at 5:45pm<br>Aarti at 7pm<br>Bodhon and Sandhi Puja at 8pm</td>
       </tr>
       <tr>
-        <td data-label="Day">Maha Nabami</td>
-        <td data-label="Event">Prayers and bhog mark the Goddess’s triumph</td>
-        <td data-label="Date & Time">Wednesday 1st October<br>11am to 10pm</td>
-        <td data-label="Details">Anjali &amp; Prasad: 8pm<br>Arati: 7:30pm</td>
+        <td data-label="Day">Maha Navami</td>
+        <td data-label="Event">Ninth day celebrations</td>
+        <td data-label="Date & Time">Wednesday 1st October<br>6pm to 9pm</td>
+        <td data-label="Details">Aarti at 7pm</td>
       </tr>
       <tr>
-        <td data-label="Day">Bijoya Dashami</td>
-        <td data-label="Event">A heartfelt farewell during the Bisarjan</td>
-        <td data-label="Date & Time">Thursday 2nd October<br>6pm to 8pm</td>
-        <td data-label="Details">—</td>
+        <td data-label="Day">Maha Dashami</td>
+        <td data-label="Event">Farewell and immersion</td>
+        <td data-label="Date & Time">Thursday 2nd October<br>6pm to 9pm</td>
+        <td data-label="Details">Visarjan (immersion) ceremony</td>
       </tr>
     </tbody>
   </table>
 </section>
 
 <section>
-  <h2>Venue Details (2025)</h2>
+  <h2>Venue</h2>
   <table class="venue-table">
     <thead>
       <tr>
-        <th>Pujo Venue</th>
-        <th>Cultural Program Venue</th>
+        <th>Place</th>
+        <th>Address</th>
+        <th>Nearby Metro</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td data-label="Pujo Venue">
-          Carrer de Buenaventura Munoz 6,<br>Ciutat Vella, Barcelona<br>
-          Nearest Metro - Arc de Triomf
-        </td>
-        <td data-label="Cultural Program Venue">
-          Federació d'Entitats Calàbria,<br>Carrer Calàbria 66, Eixample, Barcelona<br>
-          Nearest Metro - Rocafort (L1 Line)
-        </td>
+        <td>Bengali Cultural Association, Barcelona</td>
+        <td>Carrer de Buenaventura Muñoz 6, Barcelona</td>
+        <td>El Clot or Bac de Roda Metro</td>
       </tr>
     </tbody>
   </table>
+  <p><a href="https://goo.gl/maps/sX1QhFbkLMAp2Uag6" target="_blank" rel="noopener noreferrer">Google Maps Link</a></p>
 </section>
 
 <footer>
-  &copy; 2025 Bengali Cultural Association of India in Spain
+  <p>© 2025 Bengali Cultural Association - Barcelona | Contact: <a href="mailto:info@bca-barcelona.org">info@bca-barcelona.org</a></p>
 </footer>
+
+<script>
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('closeBtn');
+  const galleryImages = document.querySelectorAll('.gallery img');
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  // Close lightbox when clicking outside the image
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+
+  // Close with Esc key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
 
 </body>
 </html>
